@@ -1,7 +1,6 @@
 #include <compare>
 #include <type_traits>
 
-
 template <typename T, typename U>
 class Nec {
 private:
