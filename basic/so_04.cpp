@@ -1,6 +1,6 @@
-// == operatör fonksiyonunun olması durumunda derleyici != ifadesi için
-// a != b yerine
-// !(a == b) mümkün değil ise
+// if == operator function is declared compiler rewrites != expressions
+// for a != b 
+// !(a == b) if it is not valid
 // !(b == a) 
 
 #include <iostream>
