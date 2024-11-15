@@ -2,11 +2,9 @@
 
 int main()
 {
-	using namespace std;
-
-	strong_ordering s_or{};
-	weak_ordering w_or{};
-	partial_ordering p_or{};
+	std::strong_ordering s_or{};
+	std::weak_ordering w_or{};
+	std::partial_ordering p_or{};
 
 	p_or = w_or;
 	p_or = s_or;
