@@ -12,12 +12,11 @@ public:
 		return m_val == other.m_val;
 	}
 
-	// < <= > >= için
+	// for < <= > >=
 	auto operator<=> (const Nec& rhs) const
 	{
 		return m_val <=> rhs.m_val; // defines ordering (<, <=, >, and >=)
 	}
 private:
 	int m_val;
-	//...
 };
