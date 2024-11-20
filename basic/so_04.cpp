@@ -7,7 +7,7 @@
 
 struct Nec {
 public:
-	Nec(int val) : mx(val) {} //constructor explicit değil!
+	Nec(int val) : mx(val) {} //constructor is not explicit!
 	[[nodiscard]] bool operator==(const Nec& other)const
 	{
 		return mx == other.mx;
