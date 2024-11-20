@@ -8,7 +8,8 @@ private:
 	U mu;
 public:
 	//...
-	auto operator<=>(const Nec& other)->std::common_comparison_category_t<decltype(mt <=> mt), decltype(mu <=>mu)>
+	auto operator<=>(const Nec& other)
+	->std::common_comparison_category_t<decltype(mt <=> mt), decltype(mu <=>mu)>
 	{
 		if (auto cmp = mt <=> other.mt; cmp != 0)
 			return cmp;
