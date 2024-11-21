@@ -1,3 +1,5 @@
+// quoted from C++20 - Jossutis
+
 #include <string>
 #include <cassert>
 
