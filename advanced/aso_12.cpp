@@ -20,7 +20,7 @@ public:
 
 class Der : public Base {
 public:
-	std::strong_ordering operator<=>(const Der&)const = default;
+	std::strong_ordering operator<=>(const Der&)const = default; // auto return type will cause syntax error
 };
 
 int main()
