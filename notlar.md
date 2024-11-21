@@ -1,5 +1,6 @@
 soon 
-<---!
+<!---
+
 C++20 işe sınıflar için karşılatırma işlemlerini sağlamak daha kolay hale getirildi.
 
 
