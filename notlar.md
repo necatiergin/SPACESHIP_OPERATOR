@@ -18,31 +18,51 @@ _spaceship_ operatörünün atomu \<=\>. Bu iki operand alan _(binary)_ bir oper
 
  a <=> b
 
-- operatör karşılaştırma işleminin sonucunu üretiyor. Operatörün ürettiği değer bir tam sayı türünden değil. Operatörün ürettiği değer aşağıdaki türlerden birinden olmak zorunda. 
+- operatör karşılaştırma işleminin sonucunu üretiyor. Operatörün ürettiği değer bir tam sayı türünden değil. Operatörün ürettiği değer aşağıdaki türlerden birinden olmak zorunda: 
 
-std::strong_ordering
-std::weak_ordering
-std::partial_ordering
+- std::strong_ordering
+- std::weak_ordering
+- std::partial_ordering
 
--spaceship operatörünü kullanabilmek için yukarıdaki türlerin tanımını içeren başlık dosyası olana \<compare> başlık dsoyasının koda dahil edilmesi gerekiyorç 
+-spaceship operatörünü kullanabilmek için yukarıdaki türlerin tanımını içeren başlık dosyası olana \<compare> başlık dosyasının koda dahil edilmesi gerekiyorç 
 - _spaceship_ operatörü diğer karşılaştırma operatörlerinden daha yüksek öncelikli.
 _spacesip_ operatörünü yazdığımız kodlarda doğrudan kullanmıyoruz. Sadece kendi sınıf türlerimiz için bu operatörü yüklediğimizde _(overload)_ kullanıyoruz.
-
 
 Yeni kurallara göre karşlaştırma operatörleri _primary_ ve _secondary_ olarak iki gruba ayrılıyor
 
 - _primary_ operatörler			== ve   <=>
 - _secondary_ operatörler		!= < > <= >=
 
-primary operatörler			_reversible_ olma özelliğine sahipler.
-secondary operatörler		_rewritable_ olma özelliğine sahipler.
+_primary_ operatörler			_reversible_ olma özelliğine sahipler.<br>
+secondary operatörler		_rewritable_ olma özelliğine sahipler. <br>
 
+Örneğin derleyicinin <br>
 
-5 == x		mümkün değilse   x == 5
-a <=> b     mümkün değil ise  b <=> a
+```cpp
+5 == x
+```		
+
+gibi bir ifadeyi bir fonksiyon çağrısına dönüştürmesi mümkün değil ise derleyici bu kez <br>
+
+```cpp
+x == 5
+``` 
+
+ifadesinin geçerli olup olmadığını sınıyor. Yine derleyicinin <br> 
+```cpp
+a <=> b
+```  
+gibi bir ifadeyi bir fonksiyon çağrısına dönüştürmesi mümkün değil ise derleyici bu kez
+```cpp
+b <=> a
+```
+ifadesinin geçerli olup olmadığını sınıyor. <vr>
+
+ikincil _(secondary)_ operattörlerin yeniden yaılabilme özelliği
 
 a != b     !(a == b)    !(b == a)
 
+<!---
 operator <=>  
 
 sadece <=> operatörünü default dersek == opratörünü de default etmiş oluyoruz. (implicitly generated)
