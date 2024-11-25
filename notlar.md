@@ -1,3 +1,5 @@
+
+<!---
 - Sınıf nesnelerinin karşılaştırma operatörleri ile kullanılması önemli bir gereksinimdir. Örneğin _std::string_ nesnelerini sıklıkla karşılaştırma operatörleri ile karşılaştırırız. 
 - Bazen de _STL_ algoritmaları ve kap _(container)_ sınıflar sınıf nesnelerini karşılaştırırlar:<br>
 Örneğin _std::sort_ fonksiyonu sıralama işlemini yaparken aralıktaki nesneleri < operatörü ile karşılaştırır. <br>
@@ -64,7 +66,7 @@ ikincil _(secondary)_ operatörlerin yeniden yaılabilme özelliği
 
 a != b     !(a == b)    !(b == a) <br>
 
-<!---
+
 operator <=>  
 
 Sadece \<=> operatörünü default dersek == opratörünü de _default_ etmiş oluyoruz. _(implicitly generated)_
