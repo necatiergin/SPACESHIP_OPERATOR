@@ -21,6 +21,14 @@ _spaceship_ operatörünün atomu \<=\>. Bu iki operand alan _(binary)_ bir oper
  ```cpp
 a <=> b
 ```
+İlişkisel operatörlerin tanımlı olduğu tüm temel türler için <=> operatörü de temel sentaksta tanımlı. Örneğin _double_ türden değerler karşılaştırma operatölerinin operandı olabiliyor ise _spaceship_ operatörünün de operandı olabiliyor. 
+_spaceship_ operatörünün önceliği karşılaştırma operatörlerinin önceliğinden daha yüksek. Öncelik sırasının şöyle olduğunu söyleyebiliriz:
+
+```
+<=>
+< <= > >=
+== !=
+```
 
 - operatör karşılaştırma işleminin sonucunu üretiyor. Operatörün ürettiği değer bir tam sayı türünden değil. Operatörün ürettiği değer aşağıdaki türlerden birinden olmak zorunda: 
 
@@ -82,6 +90,7 @@ eğer derleyici <= operatörünü bulamaz ise
 (x <=> y) <= 0
 0 <= (y <=> x)
 
+C++20 standardı ile <=> dahil olmak üzere tüm karşılaştırma operatörleri için default bildirimi yapılabiliyor. Ancak uygulamada _<=>_ ve == operatörleri için _default_ bildiriminin yapılması söz konusu. _default_ bildirimleri hem üye operatör fonksiyonları hem de global operatör fonksiyonları için yapılabiliyor.
 
 
 
