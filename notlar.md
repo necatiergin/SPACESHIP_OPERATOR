@@ -1,33 +1,25 @@
-soon 
+Sınıf nesnelerinin karşılaştırılması önemli bir gereksinimdir.Bir sınıfı kullanan kodlar yazdığımızda sınıf nesnelerini karşılaştırma operatörlerinin operandı yapan ifadeler de kullanırız. Bazen de STL algoritmaları ve kap _(container)_ sınıflar sınıf nesneleri için karşılaştırma operatörlerini kullanırlar. Örneğin _std::sort_ fonksiyonu sıralama işlemini gerçekleştiriken aralıktaki nesneleri < operatörü ile karşılaştırır. Ya da _std::find_ algoritması aralıktaki değerin aranan değer olup olmadığını sınamak için aralıktaki nesneleri == operatörü ile karşılaştırır. std::set kabı (container) ekleme ve silme işlemlerinde setteki elemanları ile < operatörü ile karşılaştırır. 
+
 <!---
-
-C++20 işe sınıflar için karşılatırma işlemlerini sağlamak daha kolay hale getirildi.
-
-
-C++20 standardından önce 6 karşılaştırma operatörü de ayrı ayrı implemet ediliyordu
-bunlar ya doğrudan çağrılıyordu ya da çağırdığımız fonksiyonlar tarafından çağrılıyordu
-örneğin std::sort
-örneğin std::find
-set'in üye fonksiyınları gibi
-
+C++20 standardı ile sınıf türleri _(class types)_ için sınıf nesnelerinin karşılaştırılması _(comparision)_ işlemlerini sağlamak daha kolay hale getirildi.
+C++20 standardından önce _operator overloading_ mekanizması ile 6 karşılaştırma operatörü de ayrı ayrı tanımlanıyordu.
+spaceship operatörünün dile eklenmesi ile: 
+- Çok sayıda fonksiyon yazmak yerine 1 ya da 2 fonksiyon yazabiliyoruz.
+- Bu fonksiyonları derleyiceye yazdırabiliyoruz. (default)
+- Derleyicinin yazdığı fonksiyonlar [[nodiscard]] ile bildiriliyor.
+- Şartlar sağlanıyor ise _noexcept_ olarak bildiriliyor
+- Şartlar sağlanıyor ise _constexpr_ olarak bildiriliyor
 
 
-Çok sayıda fonksiyon yazmak yerine 1 ya da 2 fonksiyon yazabiliyoruz.
-Bu fonksiyonları derleyiceye yazdırabiliyoruz. (default)
-Derleyicinin yazdığı fonksiyoınlar [[nodiscard]] ile bildiriliyor.
-Şartlar sağlanıyor ise noexcept olarak bildiriliyor
-Şartlar sağlanıyor ise constexpr olarak bildiriliyor
+Yeni kurallara göre karşlaştırma operatörleri _primary_ ve _secondary_ olarak iki gruba ayrılıyor
 
-rewritable - reversible
+- _primary_ operatörler			== ve   <=>
+- _secondary_ operatörler		!= < > <= >=
+
+primary operatörler			_reversible_ olma özelliğine sahipler.
+secondary operatörler		_rewritable_ olma özelliğine sahipler.
 
 
-Yeni kurallara göre karşlaştırma operatörleri primary ve secondary olarak iki gruba ayrılıyor
-
-primary operatörler			== ve   <=>
-secondary operatörler		!= < > <= >=
-
-primary operatörler			reversible
-secondary operatörler		rewritable
 
 5 == x		mümkün değilse   x == 5
 a <=> b     mümkün değil ise  b <=> a
