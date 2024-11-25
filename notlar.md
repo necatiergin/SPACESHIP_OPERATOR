@@ -5,27 +5,28 @@ Ya da _std::find_ algoritması aralıktaki değerin aranan değer olup olmadığ
 _std::set_ kabı _(container)_ ekleme ve silme işlemlerinde setteki elemanları ile < operatörü ile karşılaştırır. 
 
 - C++20 standardı ile sınıf türleri _(class types)_ için sınıf nesnelerinin karşılaştırılması _(comparison)_ işlemlerini sağlamak daha kolay hale getirildi.
-- Dile yeni eklenen bu operatörün standarttaki resm iismi "three way comparison operator". Ancak programcılar daha çok _"spaceship"_ operatör terimini kullanıyorlar.
+- Dile yeni eklenen bu operatörün standarttaki resmi ismi _"three way comparison operator"_. Ancak programcılar daha çok _"spaceship"_ operatör terimini kullanıyorlar.
 C++20 standardından önce _operator overloading_ mekanizması ile 6 karşılaştırma operatörü de ayrı ayrı tanımlanıyordu.
-Bu operatörünün dile eklenmesi ile: 
+_spaceship_ operatörün dile eklenmesi ile: 
 - Çok sayıda karşılaştırma fonksiyonu yazmak yerine bir ya da iki fonksiyon tanımlamamız çoğunlukla yeterli oluyor.
 - Bu fonksiyonları derleyiciye yazdırabiliyoruz. _(default)_
 - Şartlar sağlanıyor ise _constexpr_ olarak bildiriliyor
 - Şartlar sağlanıyor ise _noexcept_ olarak bildiriliyor
 - Derleyicinin yazdığı fonksiyonlar [[nodiscard]] ile bildiriliyor.
 
-_spaceship_ operatörünün atomu <=>. Bu iki operand alan (binary) bir operatör:
+_spaceship_ operatörünün atomu \<=\>. Bu iki operand alan _(binary)_ bir operatör:
 
  a <=> b
 
-- diğer karşılaştırma operatörlerinden daha yüksek öncelikli
-spacesip operatörünü doğrudan kullanmıyoruz. sadece custom türler için bu operatör fonsiyınuu yazarken kullanıyoruzx.
-
-ürettiği değer tam sayı yüründen değüil ama tam sayı ile karşılaştırıabilir türden
+- operatör karşılaştırma işleminin sonucunu üretiyor. Operatörün ürettiği değer bir tam sayı türünden değil. Operatörün ürettiği değer aşağıdaki türlerden birinden olmak zorunda. 
 
 std::strong_ordering
 std::weak_ordering
 std::partial_ordering
+
+-spaceship operatörünü kullanabilmek için yukarıdaki türlerin tanımını içeren başlık dosyası olana \<compare> başlık dsoyasının koda dahil edilmesi gerekiyorç 
+- _spaceship_ operatörü diğer karşılaştırma operatörlerinden daha yüksek öncelikli.
+_spacesip_ operatörünü yazdığımız kodlarda doğrudan kullanmıyoruz. Sadece kendi sınıf türlerimiz için bu operatörü yüklediğimizde _(overload)_ kullanıyoruz.
 
 
 Yeni kurallara göre karşlaştırma operatörleri _primary_ ve _secondary_ olarak iki gruba ayrılıyor
