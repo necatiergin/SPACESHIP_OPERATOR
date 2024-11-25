@@ -12,11 +12,13 @@ _spaceship_ operatörün dile eklenmesi ile:
 - Bu fonksiyonları derleyiciye yazdırabiliyoruz. _(default)_
 - Şartlar sağlanıyor ise _constexpr_ olarak bildiriliyor
 - Şartlar sağlanıyor ise _noexcept_ olarak bildiriliyor
-- Derleyicinin yazdığı fonksiyonlar [[nodiscard]] ile bildiriliyor.
+- Derleyicinin yazdığı fonksiyonlar [[nodiscard]] _attribute_ ile bildiriliyor.
 
 _spaceship_ operatörünün atomu \<=\>. Bu iki operand alan _(binary)_ bir operatör:
 
- a <=> b
+ ```cpp
+a <=> b
+```
 
 - operatör karşılaştırma işleminin sonucunu üretiyor. Operatörün ürettiği değer bir tam sayı türünden değil. Operatörün ürettiği değer aşağıdaki türlerden birinden olmak zorunda: 
 
@@ -24,7 +26,7 @@ _spaceship_ operatörünün atomu \<=\>. Bu iki operand alan _(binary)_ bir oper
 - std::weak_ordering
 - std::partial_ordering
 
--spaceship operatörünü kullanabilmek için yukarıdaki türlerin tanımını içeren başlık dosyası olana \<compare> başlık dosyasının koda dahil edilmesi gerekiyorç 
+- _spaceship_ operatörünü kullanabilmek için yukarıdaki türlerin tanımını içeren başlık dosyası olana \<compare> başlık dosyasının koda dahil edilmesi gerekiyorç 
 - _spaceship_ operatörü diğer karşılaştırma operatörlerinden daha yüksek öncelikli.
 _spacesip_ operatörünü yazdığımız kodlarda doğrudan kullanmıyoruz. Sadece kendi sınıf türlerimiz için bu operatörü yüklediğimizde _(overload)_ kullanıyoruz.
 
@@ -56,17 +58,17 @@ gibi bir ifadeyi bir fonksiyon çağrısına dönüştürmesi mümkün değil is
 ```cpp
 b <=> a
 ```
-ifadesinin geçerli olup olmadığını sınıyor. <vr>
+ifadesinin geçerli olup olmadığını sınıyor. <br>
 
-ikincil _(secondary)_ operattörlerin yeniden yaılabilme özelliği
+ikincil _(secondary)_ operatörlerin yeniden yaılabilme özelliği
 
-a != b     !(a == b)    !(b == a)
+a != b     !(a == b)    !(b == a) <br>
 
 <!---
 operator <=>  
 
-sadece <=> operatörünü default dersek == opratörünü de default etmiş oluyoruz. (implicitly generated)
-ancak kendimizi <=> op.nü yazarsak derleyici == operatörünü bizim için default etmiyor.
+Sadece \<=> operatörünü default dersek == opratörünü de _default_ etmiş oluyoruz. _(implicitly generated)_
+Ancak kendimizi <=> op.nü yazarsak derleyici == operatörünü bizim için default etmiyor.
 Sınıfın veri elemanlarının sınıf tanımı içinde bildirilme sırası önem taşıyor
 
 şöyle bir ifade olsun:
