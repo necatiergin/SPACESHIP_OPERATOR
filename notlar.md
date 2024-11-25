@@ -1,8 +1,8 @@
-- Sınıf nesnelerinin karşılaştırma operatörleri ile kullanılması önemli bir gereksinimdir. Örneğin std::string nesnelerini sıklıkla karşılaştırma operatörleri ile karşılaştırırız. 
-- Bazen de _STL_ algoritmaları ve kap _(container)_ sınıflar sınıf nesnelerini karşılaştırırlar:<br>.
-Örneğin _std::sort_ fonksiyonu sıralama işlemini gerçekleştiriken aralıktaki nesneleri < operatörü ile karşılaştırır. <br>
+- Sınıf nesnelerinin karşılaştırma operatörleri ile kullanılması önemli bir gereksinimdir. Örneğin _std::string_ nesnelerini sıklıkla karşılaştırma operatörleri ile karşılaştırırız. 
+- Bazen de _STL_ algoritmaları ve kap _(container)_ sınıflar sınıf nesnelerini karşılaştırırlar:<br>
+Örneğin _std::sort_ fonksiyonu sıralama işlemini yaparken aralıktaki nesneleri < operatörü ile karşılaştırır. <br>
 Ya da _std::find_ algoritması aralıktaki değerin aranan değer olup olmadığını sınamak için aralıktaki nesneleri == operatörü ile karşılaştırır.<br>
-std::set kabı (container) ekleme ve silme işlemlerinde setteki elemanları ile < operatörü ile karşılaştırır. 
+_std::set_ kabı (container) ekleme ve silme işlemlerinde setteki elemanları ile < operatörü ile karşılaştırır. 
 
 <!---
 C++20 standardı ile sınıf türleri _(class types)_ için sınıf nesnelerinin karşılaştırılması _(comparision)_ işlemlerini sağlamak daha kolay hale getirildi.
