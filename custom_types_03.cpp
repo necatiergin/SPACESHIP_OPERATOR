@@ -1,7 +1,6 @@
 #include <string>
 #include <compare>
 
-
 class Employee {
 public:
 	[[nodiscard]] std::partial_ordering operator<=> (const Employee& rhs) const
