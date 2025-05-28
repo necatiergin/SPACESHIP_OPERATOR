@@ -10,7 +10,7 @@ void print_compare(const T& t, const U& u)
 
 	std::cout << "result of comparison : ";
 	if (result == 0) {
-		if (std::is_same_v <result_type, std::strong_ordering>)
+		if constexpr (std::is_same_v <result_type, std::strong_ordering>)
 			std::cout << "equal";
 		else
 			std::cout << "equivalent";
