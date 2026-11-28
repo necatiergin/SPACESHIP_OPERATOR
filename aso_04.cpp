@@ -30,5 +30,5 @@ int main()
 	auto b3 = p1 > p2;
 	auto b4 = p1 >= p2;
 
-	//auto b5 = p1 == p2; // Syntax Error.
+	//auto b5 = p1 == p2; 
 }
